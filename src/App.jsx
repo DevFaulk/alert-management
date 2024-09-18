@@ -1,29 +1,39 @@
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<body>
+				<main>
+					<div className="container page">
+						{page}
+						<div className="alert-box top-left">
+							{appOne}
+							<h2>Pick your journey...</h2>
+						</div>
+						<div className="alert-box top-right">{appTwo}</div>
+						<div className="alert-box bottom-left">{appThree}</div>
+						<div className="alert-box bottom-right">{appFour}</div>
+					</div>
+				</main>
+			</body>
+			<footer>
+				<div className="left-page"></div>
+				<div class="footer-left">
+					<a href="https://github.com/DevFaulk">
+						<img
+							class="github-logo"
+							src="/images/github-mark.svg"
+							alt="github cat logo"
+						/>
+						<small>Faulk</small>
+					</a>
+				</div>
+				<small>&copy; 2023</small>
+				<div className="right-page"></div>
+			</footer>
+		</div>
+	);
 }
 
 export default App;
