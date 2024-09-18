@@ -1,20 +1,34 @@
 import './App.css';
 
+let appOne = (
+	<>
+		<a href="https://outlook.com">Foo Alert</a>
+		<a href="https://outlook.com">Bar Alert</a>
+		<a href="https://outlook.com">Laurel Alert</a>
+	</>
+)
+
+let page = (
+	<>
+		<div className="alert-box top-left">
+			<h2>Outlook</h2>
+			<div className="container">
+			{appOne}
+
+			</div>
+		</div>
+		<div className="alert-box top-right"><h2>Moogsoft</h2></div>
+		<div className="alert-box bottom-left"><h2>Real</h2></div>
+		<div className="alert-box bottom-right"><h2>Tech Alerts</h2></div>
+	</>
+);
+
 function App() {
 	return (
 		<div className="App">
 			<body>
 				<main>
-					<div className="container page">
-						{page}
-						<div className="alert-box top-left">
-							{appOne}
-							<h2>Pick your journey...</h2>
-						</div>
-						<div className="alert-box top-right">{appTwo}</div>
-						<div className="alert-box bottom-left">{appThree}</div>
-						<div className="alert-box bottom-right">{appFour}</div>
-					</div>
+					<div className="container page">{page}</div>
 				</main>
 			</body>
 			<footer>
@@ -29,7 +43,7 @@ function App() {
 						<small>Faulk</small>
 					</a>
 				</div>
-				<small>&copy; 2023</small>
+				<small>&copy; 2024</small>
 				<div className="right-page"></div>
 			</footer>
 		</div>
