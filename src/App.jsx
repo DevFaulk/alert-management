@@ -1,10 +1,24 @@
 import './App.css';
 
+function handleModal() {
+	const dialogRef = useRef < HTMLDialogElement > null;
+
+	useLayoutEffect(() => {
+		if (dialogRef.current?.open && !showModal.show) {
+			dialogRef.current?.close();
+		} else if (!dialogRef.current?.open && showModal.show) {
+			dialogRef.current?.showModal();
+		}
+	}, [showModal.show]);
+
+	return <dialog ref={dialogRef}>...</dialog>;
+}
+
 let appOne = (
 	<>
-		<a href="https://outlook.com">Foo Alert</a>
-		<a href="https://outlook.com">Bar Alert</a>
-		<a href="https://outlook.com">Laurel Alert</a>
+		<a href="https://google.com">Foo Alert</a>
+		<a href="https://google.com">Bar Alert</a>
+		<a href="https://google.com">Laurel Alert</a>
 	</>
 );
 
@@ -12,31 +26,49 @@ let page = (
 	<>
 		<div className="alert-row">
 			<div className="alert-box left">
-				<h2>Outlook</h2>
+				<div className="box-header">
+					<div className="alert-number">1</div>
+					<h2>Outlook</h2>
+				</div>
 				<div className="alert-nest">{appOne}</div>
 			</div>
 			<div className="alert-box right">
-				<h2>Moogsoft</h2>
+				<div className="box-header">
+					<div className="alert-number">1</div>
+					<h2>Moog</h2>
+				</div>
 				<div className="alert-nest">{appOne}</div>
 			</div>
 		</div>
 		<div className="alert-row">
 			<div className="alert-box left">
-				<h2>Real</h2>
+				<div className="box-header">
+					<div className="alert-number">1</div>
+					<h2>Outlook</h2>
+				</div>
 				<div className="alert-nest">{appOne}</div>
 			</div>
 			<div className="alert-box right">
-				<h2>Tech Alerts</h2>
+				<div className="box-header">
+					<div className="alert-number">1</div>
+					<h2>Tech Alerts</h2>
+				</div>
 				<div className="alert-nest">{appOne}</div>
 			</div>
 		</div>
 		<div className="alert-row">
 			<div className="alert-box left">
-				<h2>Real</h2>
+				<div className="box-header">
+					<div className="alert-number">1</div>
+					<h2>IDIP</h2>
+				</div>
 				<div className="alert-nest">{appOne}</div>
 			</div>
 			<div className="alert-box right">
-				<h2>Tech Alerts</h2>
+				<div className="box-header">
+					<div className="alert-number">1</div>
+					<h2>REAL</h2>
+				</div>
 				<div className="alert-nest">{appOne}</div>
 			</div>
 		</div>
@@ -54,6 +86,9 @@ function App() {
 			<footer>
 				<div className="arrows">
 					<div className="left-page">Left</div>
+					<div className="left-page">
+						<button onClick={handleModal}>Customize</button>
+					</div>
 					<div className="right-page">Right</div>
 				</div>
 				<div className="credits">

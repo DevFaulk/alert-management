@@ -4,7 +4,7 @@ Demo for app alert management.
 
 The original idea is four boxes with available alerts for each application the user would like to monitor.
 
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
+This project was bootstrapped with [Vite](https://vitejs.dev/).
 
 ## Available Scripts
 
